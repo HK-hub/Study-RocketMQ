@@ -4,13 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hk.rocketmq</groupId>
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.5.6</version>
+    </parent>
+
+    <groupId>com.hk.com.hk.rocketmq</groupId>
     <artifactId>Study-RocketMQ</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
         <module>mq-producer</module>
         <module>mq-base</module>
+        <module>mq-consumer</module>
+        <module>dubbo-interface</module>
+        <module>dubbo-provider</module>
+        <module>dubbo-consumer</module>
     </modules>
 
     <properties>
@@ -20,10 +30,23 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version>4.9.3</version>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
